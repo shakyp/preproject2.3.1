@@ -1,15 +1,48 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Users</title>
 </head>
 <body>
-<div>
-    <th:block th:each="msg : ${messages}">
-        <h1 th:text="${msg}"></h1>
-    </th:block>
-</div>
+<h1>User Management</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.age}"></td>
+    </tr>
+    </thead>
+</table>
+
+<form method="post" action="/add">
+    <label>
+        <input type="text" name="name" placeholder="name">
+        <input type="number" min="1" name="age" placeholder="age">
+    </label>
+    <button type="submit">Add User</button>
+</form>
+
+<form method="post" action="/delete">
+    <label>
+        <input type="number" min="1" name="id" placeholder="id">
+    </label>
+    <button type="submit">Delete User</button>
+</form>
+
+<form method="post" action="/update">
+    <label>
+        <input type="number" name="id" placeholder="id">
+        <input type="text" name="name" placeholder="name">
+        <input type="number" min="1" name="age" placeholder="age">
+    </label>
+    <button type="submit">Update User</button>
+</form>
 </body>
 </html>
