@@ -21,26 +21,26 @@
     </thead>
 </table>
 
-<form method="post" action="/add">
+<form th:action="@{/add}" method="post">
     <label>
-        <input type="text" name="name" placeholder="name">
-        <input type="number" min="1" name="age" placeholder="age">
+        <input type="text" th:name="name" placeholder="name">
+        <input type="number" th:min="1" th:name="age" placeholder="age">
     </label>
     <button type="submit">Add User</button>
 </form>
 
-<form method="post" action="/delete">
+<form th:action="@{/delete}" method="post">
     <label>
-        <input type="number" min="1" name="id" placeholder="id">
+        <input type="number" th:min="1" th:name="id" placeholder="id">
     </label>
     <button type="submit">Delete User</button>
 </form>
 
-<form method="post" action="/update">
+<form th:action="@{/update}" method="post">
     <label>
-        <input type="number" name="id" placeholder="id">
-        <input type="text" name="name" placeholder="name">
-        <input type="number" min="1" name="age" placeholder="age">
+        <input type="number" th:name="id" placeholder="id">
+        <input type="text" th:name="name" placeholder="name">
+        <input type="number" th:min="1" th:name="age" placeholder="age">
     </label>
     <button type="submit">Update User</button>
 </form>
