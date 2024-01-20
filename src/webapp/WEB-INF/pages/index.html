@@ -38,7 +38,7 @@
 
 <form th:action="@{/update}" method="post">
     <label>
-        <input type="number" th:name="id" placeholder="id">
+        <input type="number" th:min="1" th:name="id" placeholder="id">
         <input type="text" th:name="name" placeholder="name">
         <input type="number" th:min="1" th:name="age" placeholder="age">
     </label>
